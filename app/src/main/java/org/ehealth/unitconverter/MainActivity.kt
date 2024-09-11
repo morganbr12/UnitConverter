@@ -1,6 +1,7 @@
 package org.ehealth.unitconverter
 
 import android.os.Bundle
+import android.provider.CalendarContract.Colors
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -31,9 +32,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import org.ehealth.unitconverter.ui.theme.UnitConverterTheme
 import kotlin.math.roundToInt
 
@@ -86,7 +89,11 @@ fun UnitConverter(modifier: Modifier) {
 //        here all the UI element will be stacked below each other
 
 //        header
-        Text(text = "Unit Converter")
+        Text(
+            text = "Unit Converter",
+            fontSize = 18.sp,
+            color = Color.Red,
+        )
         Spacer(modifier = Modifier.height(16.dp))
 
 //        input filled
@@ -201,9 +208,10 @@ fun UnitConverter(modifier: Modifier) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-         Text(
+        Text(
             text = "Results: $outputValue $outputUnit",
-            style = MaterialTheme.typography.bodySmall,
+            style = MaterialTheme.typography.headlineMedium,
+            fontSize = 16.sp,
             color = MaterialTheme.colorScheme.tertiary,
         );
     }
